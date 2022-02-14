@@ -19,10 +19,11 @@ const start = () => {
     bot.setMyCommands( [
         {command: '/start', description: 'Начальное приветствие'},
         {command: '/info', description: 'Получить информацию о себе'},
-        {command: '/game', description: 'Сыграть в игру'}
+        {command: '/game', description: 'Сыграть в игру'},
+    
     ])
     
-    bot.on('message', async msg => {
+   bot.on('message', async msg => {
         const text = msg.text;
         const chatId = msg.chat.id;
         if (text === '/start') {
@@ -30,7 +31,7 @@ const start = () => {
         return bot.sendSticker(chatId, 'https://tlgrm.ru/_/stickers/345/f75/345f75a5-5aa3-3b70-842f-457f4fd54150/192/18.webp')
         }
         if (text === '/info') {
-        return bot.sendMessage(chatId, `Твое никчемное имя ${msg.from.first_name} ${msg.from.last_name}.                             В свидетельстве о крещении звучит получше.`);
+        return bot.sendMessage(chatId, `Твое никчемное имя ${msg.from.first_name}. В свидетельстве о крещении звучит получше.`);
         }
         if (text === '/game') {
             return startGame(chatId)
