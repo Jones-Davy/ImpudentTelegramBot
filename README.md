@@ -1,1 +1,1 @@
-# telegramBot_js
+# telegramBot-JS
